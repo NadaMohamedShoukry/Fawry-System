@@ -3,6 +3,11 @@ package FawrySystem;
 public class Wallet implements Payment{
 	double availMoney;
 	double amount;
+
+	public Wallet() {
+	}
+	
+	
 	public Wallet(double availMoney) {
 		this.availMoney=availMoney;
 	}

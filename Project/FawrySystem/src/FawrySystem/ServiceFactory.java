@@ -2,7 +2,8 @@ package FawrySystem;
 
 import java.util.ArrayList;
 
-public interface ServiceFactory {
+public interface ServiceFactory 
+{
     // public static int servID = 0;
     public static ArrayList<Double> servs = new ArrayList<>();
 
