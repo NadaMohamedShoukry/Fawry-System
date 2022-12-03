@@ -24,8 +24,13 @@ public class Services implements ServiceFactory {
 
     @Override
     public double payForLandline(Landline l) {
-        // TODO Auto-generated method stub
-        return 0;
+    	System.out.println("Enter Landline fee per month: ");
+        double amount = input.nextDouble();
+        double cost = l.payReceipt(amount);
+        // servID++;
+        servs.add(cost); // to help in refund method
+        System.out.println("the service ID is:" + servs.lastIndexOf(cost));
+        return cost;
     }
 
     @Override
