@@ -5,13 +5,14 @@ import java.util.*;
 public class Refund {
     Scanner input = new Scanner(System.in);
 
-    Payment p = new Wallet();
+    Wallet p = new Wallet();
     ServiceFactory s;
     boolean status = true;
 
     public boolean RefundRequest() {
         System.out.println("Enter ID of the service: ");
         String ID = input.next();
+
         // send refund request to admin
         System.out.println("your refund request is sent to the admin.");
         if (status == true) {
@@ -24,11 +25,12 @@ public class Refund {
     }
 
     public double getMoney() {
-        if (status == true) {
-            p.availMoney += s.servz.get(id);
+        if (status == true) 
+        {
+            p.availMoney += s.servs.get(s.servID);
         }
 
-        return 0;
+        return p.availMoney;
     }
 
 }
