@@ -8,8 +8,7 @@ public class Orange implements MobileRecharge, InternetPayment {
     @Override
     public double recharge(double amount) {
         System.out.println("Enter mobile number: ");
-        String number = input.next();
-        // send number and amount to the company to charge
+        // send number and amount to the company to charge money
         System.out.println("You need to pay: " + (amount * 1.5));
         return (amount * 1.5);
     }
