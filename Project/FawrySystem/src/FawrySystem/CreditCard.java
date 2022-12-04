@@ -1,15 +1,21 @@
 package FawrySystem;
 
 public class CreditCard implements Payment{
-	String cardname;
+	String cardnumber;
+	int Month;
+	int Year;
 	double availMoney;
 	double amount;
-	public CreditCard(String cardname,double availMoney) {
-		this.cardname=cardname;
+	public CreditCard(String cardnumber,int Month,int Year,double availMoney,double amount) {
+		this.cardnumber=cardnumber;
+		this.Month=Month;
+		this.Year=Year;
 		this.availMoney=availMoney;
+		this.amount=amount;
 	}
      public double pay(double amount) {
-    	 return amount;
+    	 System.out.println(" Your Account Now " +  (availMoney-amount));
+    	 return availMoney;
      }
      
      public boolean validatePay() {
@@ -24,8 +30,8 @@ public class CreditCard implements Payment{
     		
      }
      
-     public void account(double amount) {
-    	 System.out.println(" Your Account Now " +  (availMoney-amount));
-    	 
-     }
+//     public void account(double amount) {
+//    	 System.out.println(" Your Account Now " +  (availMoney-amount));
+//    	 
+//     }
 }
