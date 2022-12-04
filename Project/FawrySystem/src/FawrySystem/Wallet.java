@@ -5,7 +5,9 @@ public class Wallet implements Payment{
 	double amount;
 
 	public Wallet() {
+		
 	}
+
 	
 	
 	public Wallet(double availMoney) {
