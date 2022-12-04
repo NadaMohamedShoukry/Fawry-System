@@ -25,11 +25,6 @@ public class Main {
 		Refund r = new Refund();
 		r.RefundRequest();
 		r.getMoney();
-		Wallet w = new Wallet(10);
-		System.out.println(w.availMoney);
+		
 	}
-
-	
-
-
 }
