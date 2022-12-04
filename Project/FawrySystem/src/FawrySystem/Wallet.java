@@ -12,8 +12,8 @@ public class Wallet implements Payment{
 	}
 	@Override
      public double pay(double amount) {
-    	 System.out.println(" Your Wallet Now " +  (availMoney-amount));
-    	 return availMoney;
+		this.amount=amount;
+    	 return amount;
      }
      @Override
      public boolean validatePay() {
@@ -25,8 +25,14 @@ public class Wallet implements Payment{
     		
      }
      
-//     public void account(double amount) {
-//    	 System.out.println(" Your Wallet Now " +  (availMoney-amount));
-//    	 
-//     }
+     @Override
+     public double collectPayDet()
+     {
+    	 return availMoney;
+     }
+     
+     public void account(double amount) {
+    	 System.out.println(" Your Wallet Now " +  (availMoney-amount));
+    	 
+     }
 }

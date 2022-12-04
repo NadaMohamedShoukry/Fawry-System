@@ -5,7 +5,7 @@ import java.util.*;
 public class Refund {
     Scanner input = new Scanner(System.in);
 
-    Wallet p = new Wallet(availMoney);
+    Wallet p = new Wallet();
     ServiceFactory s;
     
     Admin a = new Admin();

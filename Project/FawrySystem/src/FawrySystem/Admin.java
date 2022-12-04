@@ -8,7 +8,7 @@ public class Admin {
     boolean status = input.nextBoolean();
 
     
-    ArrayList<Refund> refundRequests = new ArrayList<Refund>();
+    ArrayList<Refund> refundRequests = new ArrayList<>();
 
 
 }
