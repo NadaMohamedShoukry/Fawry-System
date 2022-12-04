@@ -25,6 +25,11 @@ public class Wallet implements Payment{
     		
      }
      
+     public void collectPayDet()
+     {
+    	 
+     }
+     
 //     public void account(double amount) {
 //    	 System.out.println(" Your Wallet Now " +  (availMoney-amount));
 //    	 
