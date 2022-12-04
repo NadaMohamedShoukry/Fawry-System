@@ -12,7 +12,8 @@ public class Wallet implements Payment{
 		this.availMoney=availMoney;
 	}
      public double pay(double amount) {
-    	 return amount;
+    	 System.out.println(" Your Wallet Now " +  (availMoney-amount));
+    	 return availMoney;
      }
      
      public boolean validatePay() {
@@ -24,8 +25,8 @@ public class Wallet implements Payment{
     		
      }
      
-     public void account(double amount) {
-    	 System.out.println(" Your Wallet Now " +  (availMoney-amount));
-    	 
-     }
+//     public void account(double amount) {
+//    	 System.out.println(" Your Wallet Now " +  (availMoney-amount));
+//    	 
+//     }
 }
