@@ -1,7 +1,12 @@
 package fawry;
 
+import java.util.Scanner;
+
 public class Cache implements Payment{
+	Scanner input = new Scanner(System.in);
 	double amount;
+	String address;
+	String number;
 	public Cache() {
 		
 	}
@@ -28,10 +33,15 @@ public class Cache implements Payment{
      }
 	
 	@Override
-	public double collectPayDet()
+	public void collectPayDet()
 	{
-		System.out.println("Please pay "+amount);
-		return amount;
+		System.out.println("Enter the Address");
+		address=input.next();
+		System.out.println("Enter Phone Number");
+		number=input.next();
+		
+		
+		
 	}
 
 }

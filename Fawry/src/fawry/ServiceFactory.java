@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public interface ServiceFactory {
 
-	public static int servID = 0;
+	//public static int servID = 0;
+	public int servID=-1;
     public static ArrayList<Double> servs = new ArrayList<>();
 
     public double payForMobile(MobileRecharge m);

@@ -1,10 +1,14 @@
 package fawry;
 
+import java.util.Scanner;
+
 public class Wallet implements Payment{
+	Scanner input = new Scanner(System.in);
 	double availMoney;
 	double amount;
+	String verfyNum;
 
-	public Wallet(){}
+	
 
 	
 	public Wallet(double availMoney) {
@@ -26,9 +30,10 @@ public class Wallet implements Payment{
      }
      
      @Override
-     public double collectPayDet()
+     public void collectPayDet()
      {
-    	 return availMoney;
+    	 System.out.println("Enter verfy message");
+ 		verfyNum=input.next();
      }
      
      public void account(double amount) {
