@@ -3,37 +3,25 @@ package FawrySystem;
 import java.util.Scanner;
 
 public class SignIn implements LogIn{
+	Scanner obj = new Scanner(System.in);
 	@Override
 	public void login(User user)
 	{
-		boolean flag=false;
 		System.out.println("Username:");
-		Scanner input = new Scanner(System.in);
-		if(input.next()==user.userName)
+		obj = new Scanner(System.in);
+		for(int i=0;i<UserDB.database.size();i++)
 		{
-			flag=true;
+			if(UserDB.database.get(i).userName == obj.next())
+			{
+				System.out.println("Password:");
+				obj = new Scanner(System.in);
+				if(UserDB.database.get(i).password == obj.next())
+				{
+					System.out.println("Successful Login");
+					return;
+				}
+			}
 		}
-		else
-		{
-			System.out.println("Incorrect Username");
-		}
-		System.out.println("Password:");
-		input = new Scanner(System.in);
-		if(input.next()==user.password && flag==true)
-		{
-			flag=true;
-		}
-		else
-		{
-			System.out.println("Incorrect Password");
-		}
-		if(flag)
-		{
-			System.out.println("Successful LogIn");
-		}
-		else
-		{
-			System.out.println("UnSuccessful LogIn");
-		}
+		System.out.println("Couldn't login");
 	}
 }

@@ -6,6 +6,14 @@ public class Main {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to Our System");
+		System.out.println("Sign In / Sign Up?");
+		System.out.println("0 for Sign In / 1 for Sign Up");
+		Scanner input = new Scanner(System.in);
+		int flag = input.nextInt();
+		if(flag)
+		{
+			
+		}
 
 		// the main is not ready only for test what we code
 		Scanner in = new Scanner(System.in);

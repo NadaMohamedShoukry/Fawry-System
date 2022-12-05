@@ -13,7 +13,7 @@ public class Refund {
     public boolean RefundRequest() {
         System.out.println("Enter ID of the service: ");
         int ID = input.nextInt();
-        a.refundRequests.add(ID);
+//        a.refundRequests.add(ID);
         System.out.println("your refund request is sent to the admin.");
         if (a.status == true) {
             System.out.println("your refund request has been accepted.");
