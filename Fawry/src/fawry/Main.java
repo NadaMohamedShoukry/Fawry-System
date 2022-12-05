@@ -23,9 +23,9 @@ public class Main {
 		// MobileRecharge m = new Orange();
 		// cost = ss.payForMobile(m);
 		Wallet w = new Wallet(10);
-		Refund r = new Refund();
-		r.RefundRequest();
-		r.getMoney();
+		//Refund r = new Refund();
+		//r.RefundRequest();
+		//r.getMoney();
 		System.out.println(w.availMoney);
 		
 	}
