@@ -24,6 +24,7 @@ public class SignUp implements LogIn{
 				System.out.println("Account already exists");
 				System.out.println("Please Sign in");
 				s.login(user);
+				break;
 			}
 		}
 		UserDB.database.add(user);
