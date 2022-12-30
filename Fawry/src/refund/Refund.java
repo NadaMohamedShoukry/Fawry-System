@@ -7,7 +7,7 @@ import services.ServiceFactory;
 
 public class Refund {
 
-	    Payment p = new Wallet();
+	    Wallet w = new Wallet();
 	    ServiceFactory s;
 	    //boolean status;
 	    
@@ -28,18 +28,17 @@ public class Refund {
 	    }
 
 //	    public void setStatus(boolean st) {
-//	    	status = st;
+//	    	status = st;s
 //	    }
 
 	    public double getMoney() {
 	        if (a.status == true) 
 	        {
-	           //p.availMoney += s.servs.get(s.servID);
+	           w.availMoney += ServiceFactory.servs.get(ServiceFactory.servID);
 	        	return ServiceFactory.servs.get(ServiceFactory.servID);
 	            
 	        }
-	        //System.out.println(p.availMoney);
-	        return 0.0;
+	        return w.availMoney;
 	    }
 
 }

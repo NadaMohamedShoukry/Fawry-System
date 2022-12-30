@@ -6,17 +6,10 @@ public class Wallet implements Payment{
 	double amount;
 	String verfyNum;
 
-//	public Wallet(double availMoney, String verfyNum) {
-//		this.availMoney=availMoney;
-//		this.verfyNum=verfyNum;
-//	}
-	public void setAvailMoney(double availMoney) {
-		this.availMoney = availMoney;
+	public Wallet(double availMoney, String verfyNum) {
+		this.availMoney=availMoney;
+		this.verfyNum=verfyNum;
 	}
-	public void setverfyNum(String verfyNum) {
-		this.verfyNum= verfyNum;
-	}
-
 	@Override
      public double pay(double amount) {
 		this.amount=amount;
