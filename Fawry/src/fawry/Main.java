@@ -2,6 +2,9 @@ package fawry;
 
 import java.util.Scanner;
 
+import services.*;
+
+
 public class Main {
 	static Scanner input = new Scanner(System.in);
 	
@@ -43,6 +46,9 @@ public class Main {
 				System.out.println("3: We");
 				System.out.println("4: Etisalat");
 				int num = input.nextInt();
+
+		        System.out.println("Enter mobile number: ");
+		        String number = input.next();
 				switch (num) {
 					case 1:
 						rm = new Vodafone();
@@ -58,7 +64,11 @@ public class Main {
 						break;
 					
 				}
-				 cost=s.payForMobile(rm);
+				rm.setMobileNumb(number);
+
+		        System.out.println("Enter recharge amount: ");
+		        double amount = input.nextDouble();
+				 cost=s.payForMobile(rm,amount);
 				
 				
 			}else if(ch=='B' || ch=='b') {
@@ -70,59 +80,81 @@ public class Main {
 				System.out.println("3:We");
 				System.out.println("4:Etisalat");
 				int num = input.nextInt();
+				System.out.println("Enter Landline number used to internet: ");
+		        String number = input.next();
 				switch (num) {
 					case 1:
 						ip = new Vodafone();
+						
 						break;
 					case 2:
 						ip = new Orange();
 						break;
 					case 3:
 						ip = new We();
+						
 						break;
 					case 4:
 						ip = new Etisalat();
 						break;
 					
 				}
-				 cost=s.payForInternet(ip);
+
+		        System.out.println("Enter Internet fee: ");
+		        double amount = input.nextDouble();
+				ip.setInternetNumb(number);
+				 cost=s.payForInternet(ip,amount);
 				
 			}else if(ch=='C' || ch=='c') {
-				Landline ln=new MonthlyReceipt(); // as a default 
+				Landline ln=new MonthlyReceipt(""); // as a default 
 				
 				System.out.println("\nChoose Service Provider:");
 				System.out.println("1: Monthly Receipt");
 				System.out.println("2: Quarter Receipt");
 				int num = input.nextInt();
+				System.out.println("Enter Landline number:");
+		        String number = input.next();
 				switch (num) {
 					case 1:
-						ln=new MonthlyReceipt();
+						ln=new MonthlyReceipt(number);
 						break;
 					case 2:
-						ln=new QuarterReceipt();
+						ln=new QuarterReceipt(number);
 						break;
 				} 
-				cost = s.payForLandline(ln);
+
+		    	System.out.println("Enter Landline fee per month: ");
+		        double amount = input.nextDouble();
+				cost = s.payForLandline(ln,amount);
 				
 			}else if(ch=='D' || ch=='d') {
-				Donations d=new Schools();// as a default 
+				Donations d=new Schools("");// as a default 
 				System.out.println("\nChoose Service Provider:");
 				System.out.println("1: Cancer Hospital");
 				System.out.println("2: Schools");
 				System.out.println("3: NGOs");
 				int num = input.nextInt();
+				String name ;
 				switch (num) {
 					case 1:
-						d = new CancerHospital();
+					   System.out.println("Enter Hospital Name: ");
+					    name = input.next();
+						d = new CancerHospital(name);
 						break;
 					case 2:
-						d = new Schools();
+						System.out.println("Enter School Name: ");
+				         name = input.next();
+						d = new Schools(name);
 						break;
 					case 3:
-						d = new NGOs();
+						 System.out.println("Enter NGO (organizations) Name: ");
+					      name = input.next();
+						d = new NGOs(name);
 						break;
 				}
-				cost = s.payForDonations(d);
+				System.out.println("Enter Donation's amount: ");
+		         double amount = input.nextDouble();
+				cost = s.payForDonations(d,amount);
 			}else if(ch=='E' || ch=='e') {
 				System.out.println("EXIST");
 				f=false;

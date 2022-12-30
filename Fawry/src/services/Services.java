@@ -1,14 +1,10 @@
-package fawry;
-
-import java.util.Scanner;
+package services;
 
 public class Services implements ServiceFactory {
-    Scanner input = new Scanner(System.in);
 
     @Override
-    public double payForDonations(Donations d) {
-    	 System.out.println("Enter Donation's amount: ");
-         double amount = input.nextDouble();
+    public double payForDonations(Donations d, double amount) {
+    	 
          double cost = d.donate(amount);
          // servID++;
          servs.add(cost); // to help in refund method
@@ -17,9 +13,7 @@ public class Services implements ServiceFactory {
     }
 
     @Override
-    public double payForInternet(InternetPayment i) {
-        System.out.println("Enter Internet fee: ");
-        double amount = input.nextDouble();
+    public double payForInternet(InternetPayment i, double amount) {
         double cost = i.internetPay(amount);
         // servID++;
         servs.add(cost); // to help in refund method
@@ -28,9 +22,7 @@ public class Services implements ServiceFactory {
     }
 
     @Override
-    public double payForLandline(Landline l) {
-    	System.out.println("Enter Landline fee per month: ");
-        double amount = input.nextDouble();
+    public double payForLandline(Landline l, double amount) {
         double cost = l.payReceipt(amount);
         // servID++;
         servs.add(cost); // to help in refund method
@@ -39,9 +31,7 @@ public class Services implements ServiceFactory {
     }
 
     @Override
-    public double payForMobile(MobileRecharge m) {
-        System.out.println("Enter recharge amount: ");
-        double amount = input.nextDouble();
+    public double payForMobile(MobileRecharge m, double amount) {
         double cost = m.recharge(amount);
         // servID++;
         servs.add(cost); // to help in refund method
