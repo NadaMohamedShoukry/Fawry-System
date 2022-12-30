@@ -1,5 +1,7 @@
 package fawry;
 
+import services.Services;
+
 public class User {
 	String userName;
 	String password;

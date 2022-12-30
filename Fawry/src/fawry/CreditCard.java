@@ -22,8 +22,8 @@ public class CreditCard implements Payment{
 //	}
 	@Override
      public double pay(double amount) {
-    	 System.out.println(" Your Account Now " +  (availMoney-amount));
-    	 return availMoney;
+		this.amount=amount;
+		return amount;
      }
      
 	@Override
