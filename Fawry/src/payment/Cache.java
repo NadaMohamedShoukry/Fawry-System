@@ -1,22 +1,20 @@
-package fawry;
-
-import java.util.Scanner;
+package payment;
 
 public class Cache implements Payment{
-	Scanner input = new Scanner(System.in);
+	
 	double amount;
 	String address;
 	String number;
-	public Cache() {
-		
-	}
 	
-	public Cache(double amount)
+	public Cache(double amount,String address,String number)
 	{
 		this.amount=amount;
+		this.address=address;
+		this.number=number;
 	}
 	@Override
      public double pay(double amount) {
+		this.amount=amount;
     	 return amount;
      }
      
@@ -31,17 +29,17 @@ public class Cache implements Payment{
     	 System.out.println(" Pay on delivery ");
     	 
      }
-	
-	@Override
-	public void collectPayDet()
-	{
-		System.out.println("Enter the Address");
-		address=input.next();
-		System.out.println("Enter Phone Number");
-		number=input.next();
-		
-		
-		
-	}
+//	
+//	@Override
+//	public void collectPayDet()
+//	{
+//		System.out.println("Enter the Address");
+//		address=input.next();
+//		System.out.println("Enter Phone Number");
+//		number=input.next();
+//		
+//		
+//		
+//	}
 
 }

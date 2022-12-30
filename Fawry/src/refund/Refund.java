@@ -1,11 +1,10 @@
-package fawry;
+package refund;
 
-import java.util.*;
 
+import admin.Admin;
 import services.ServiceFactory;
 
 public class Refund {
-	 Scanner input = new Scanner(System.in);
 
 	    //Wallet p = new Wallet(10000);
 	    ServiceFactory s;
@@ -15,8 +14,8 @@ public class Refund {
 
 	    public boolean RefundRequest() {
 	        System.out.println("Enter ID of the service: ");
-	        int ID = input.nextInt();
-	        a.refundRequests.add(ID);
+	   //     int ID = input.nextInt();
+	      //  a.refundRequests.add(ID);
 	       // s.servID =ID;
 	        System.out.println("your refund request is sent to the admin.");
 	        if (status == true) {

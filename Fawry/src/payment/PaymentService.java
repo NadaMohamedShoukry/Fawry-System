@@ -1,4 +1,4 @@
-package fawry;
+package payment;
 
 public class PaymentService {
 	Payment obj;

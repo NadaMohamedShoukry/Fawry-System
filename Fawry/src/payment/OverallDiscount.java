@@ -1,4 +1,4 @@
-package fawry;
+package payment;
 
 public class OverallDiscount extends Discount{
     double overAll;

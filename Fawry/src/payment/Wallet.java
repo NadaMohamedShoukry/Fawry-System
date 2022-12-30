@@ -1,18 +1,14 @@
-package fawry;
-
-import java.util.Scanner;
+package payment;
 
 public class Wallet implements Payment{
-	Scanner input = new Scanner(System.in);
+	
 	double availMoney;
 	double amount;
 	String verfyNum;
 
-	
-
-	
-	public Wallet(double availMoney) {
+	public Wallet(double availMoney, String verfyNum) {
 		this.availMoney=availMoney;
+		this.verfyNum=verfyNum;
 	}
 	@Override
      public double pay(double amount) {
@@ -29,13 +25,13 @@ public class Wallet implements Payment{
     		
      }
      
-     @Override
-     public void collectPayDet()
-     {
-    	 System.out.println("Enter verfy message");
- 		verfyNum=input.next();
-     }
-     
+//     @Override
+//     public void collectPayDet()
+//     {
+//    	 System.out.println("Enter verfy message");
+// 		verfyNum=input.next();
+//     }
+//     
      public void account(double amount) {
     	 System.out.println(" Your Wallet Now " +  (availMoney-amount));
     	 

@@ -2,9 +2,11 @@ package fawry;
 
 import java.util.ArrayList;
 
+import user.User;
+
 public class UserDB {
 
-	static ArrayList<User> database = new ArrayList<>();
+	static public ArrayList<User> database = new ArrayList<>();
 	
 	public UserDB()
 	{

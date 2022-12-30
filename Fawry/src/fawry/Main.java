@@ -2,7 +2,16 @@ package fawry;
 
 import java.util.Scanner;
 
+import payment.Cache;
+import payment.CreditCard;
+import payment.OverallDiscount;
+import payment.Payment;
+import payment.PaymentService;
+import payment.Wallet;
 import services.*;
+import user.SignIn;
+import user.SignUp;
+import user.User;
 
 
 public class Main {
@@ -10,18 +19,47 @@ public class Main {
 	
 	public static void main(String[] args) {
 		System.out.println("Welcome to Our System");
-		User u1 = new User("" , "" , "");
-		System.out.println("1:SignIn / 2:SignUp");
+		User user = new User();
+		System.out.println("1:SignIn / 2:SignUp ");
 		int choice = input.nextInt();
 		if(choice==1)
 		{
 			SignIn si = new SignIn();
-			si.login(u1);
+			System.out.println("Enter Username:");
+			String userName=input.next();
+			user.setName(userName);
+			System.out.println("Enter Password:");
+			String password=input.next();
+			user.setPass(password);
+			si.login(user);
+			if(si.check==false) {
+				SignUp su = new SignUp();
+				System.out.println("Enter Username:");
+				 userName=input.next();
+				user.setName(userName);
+				System.out.println("Enter Email:");
+				String email=input.next();
+				user.setEmail(email);
+				System.out.println("Enter Password:");
+				 password=input.next();
+				user.setPass(password);
+				su.login(user);
+			}
+				
 		}
 		else
 		{
 			SignUp su = new SignUp();
-			su.login(u1);
+			System.out.println("Enter Username:");
+			String userName=input.next();
+			user.setName(userName);
+			System.out.println("Enter Email:");
+			String email=input.next();
+			user.setEmail(email);
+			System.out.println("Enter Password:");
+			String password=input.next();
+			user.setPass(password);
+			su.login(user);
 		}	
 		boolean f=true;
 		while(f) {
@@ -171,26 +209,44 @@ public class Main {
 				case 1:
 					System.out.println("Enter Available Money in your Wallet");
 					double mn=input.nextDouble();
-					p = new Wallet(mn);
+					System.out.println("Enter verfy message");
+			 		String verfyNum=input.next();
+					p = new Wallet(mn,verfyNum);
 					break;
 				case 2:
 					System.out.println("Enter Available Money in the Credit");
 					 mn=input.nextDouble();
-					p = new CreditCard(mn);
+					 System.out.println("Enter Card No.:");
+					input = new Scanner(System.in);
+					String cardnumber=input.next();
+					System.out.println("Enter Month:");
+					input = new Scanner(System.in);
+					int Month=input.nextInt();
+					System.out.println("Enter Year:");
+					input = new Scanner(System.in);
+					int Year=input.nextInt();
+					System.out.println("Enter Price:");
+					double amount=input.nextDouble();
+					p = new CreditCard(cardnumber,Month,Year,mn,amount);
 					break;
 				case 3:
-					p = new Cache();
+					System.out.println("Enter the Address");
+					String address=input.next();
+					System.out.println("Enter Phone Number");
+					String number=input.next();
+					System.out.println("Enter amount to be paid");
+					double cachemoney=input.nextDouble();
+					p = new Cache(cachemoney,address,number);
 					break;
 			}
 
-			p.collectPayDet();
+			//p.collectPayDet();
 			ps.setStrategy(p);
 			if(s.servs.lastIndexOf(cost)==0) {
 				p=new OverallDiscount(p);
 				System.out.println("As it's your 1st service we make a discount for you");
 				cost=p.pay(cost);
 			}
-			
 			ps.ProcessOrder(cost);
 			p.account(cost);
 			

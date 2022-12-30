@@ -1,4 +1,4 @@
-package fawry;
+package payment;
 
 public abstract class Discount implements Payment{
 	public Payment obj;
@@ -9,11 +9,11 @@ public abstract class Discount implements Payment{
 		return amount;
 	}
 
-	@Override
-	public void collectPayDet() {
-		// TODO Auto-generated method stub
-		
-	}
+//	@Override
+//	public void collectPayDet() {
+//		// TODO Auto-generated method stub
+//		
+//	}
 
 	@Override
 	public boolean validatePay() {
