@@ -2,14 +2,21 @@ package payment;
 
 public class Wallet implements Payment{
 	
-	double availMoney;
+	public double availMoney;
 	double amount;
 	String verfyNum;
 
-	public Wallet(double availMoney, String verfyNum) {
-		this.availMoney=availMoney;
-		this.verfyNum=verfyNum;
+//	public Wallet(double availMoney, String verfyNum) {
+//		this.availMoney=availMoney;
+//		this.verfyNum=verfyNum;
+//	}
+	public void setAvailMoney(double availMoney) {
+		this.availMoney = availMoney;
 	}
+	public void setverfyNum(String verfyNum) {
+		this.verfyNum= verfyNum;
+	}
+
 	@Override
      public double pay(double amount) {
 		this.amount=amount;
