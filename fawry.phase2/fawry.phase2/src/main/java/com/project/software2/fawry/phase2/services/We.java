@@ -1,20 +1,26 @@
 package com.project.software2.fawry.phase2.services;
 
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
 public class We implements MobileRecharge, InternetPayment {
 	
     String intNumber;
     String mobNumber;
-
+    
+    @PostMapping(value="/weMobile/{amount}")
     @Override
-    public double recharge(double amount) {
+    public double recharge(@PathVariable("amount")double amount) {
         // send number and amount to the company to charge(mobNumber)
         System.out.println("You need to pay: " + (amount * 1.5));
         return (amount * 1.5);
     }
-
+    
+    @PostMapping(value="/weInternet/{amount}")
     @Override
-    public double internetPay(double amount) {
+    public double internetPay(@PathVariable("amount")double amount) {
         
         // send number and amount to the company to Pay for internet(mobNumber)
         System.out.println("You need to pay: " + amount);
@@ -30,5 +36,16 @@ public class We implements MobileRecharge, InternetPayment {
     public void setMobileNumb(String number) {
     	this.mobNumber=number;
     }
+    
+    @Override
+    public String getMobileNumb() {
+    	return mobNumber;
+    }
+    
+    public String getInternetNumb() {
+    	return intNumber;
+    }
+    
+    
 
 }
