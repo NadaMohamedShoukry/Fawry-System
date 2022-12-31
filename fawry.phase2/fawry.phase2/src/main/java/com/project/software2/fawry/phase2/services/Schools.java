@@ -1,6 +1,6 @@
-package services;
+package com.project.software2.fawry.phase2.services;
 
-import java.util.Scanner;
+
 
 public class Schools implements Donations {
     

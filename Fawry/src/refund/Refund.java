@@ -6,8 +6,9 @@ import payment.*;
 import services.ServiceFactory;
 
 public class Refund {
-
-	    Wallet w = new Wallet();
+        double availMoney;
+        String verifyNum;
+	    Wallet w = new Wallet(availMoney,verifyNum);
 	    ServiceFactory s;
 	    //boolean status;
 	    

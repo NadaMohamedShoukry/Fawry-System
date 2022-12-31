@@ -19,6 +19,10 @@ public class Main {
 	
 	public static void main(String[] args) {
 		System.out.println("Welcome to Our System");
+		//System.out.println("Admin OR User");
+		//String human=input.next();
+		//while(human=="Admin"|| human =="admin" || human=="")
+		
 		User user = new User();
 		System.out.println("1:SignIn / 2:SignUp ");
 		int choice = input.nextInt();
