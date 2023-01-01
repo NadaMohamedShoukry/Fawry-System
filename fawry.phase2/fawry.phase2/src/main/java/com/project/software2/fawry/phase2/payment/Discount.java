@@ -1,5 +1,8 @@
 package com.project.software2.fawry.phase2.payment;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class Discount implements Payment{
 	public Payment obj;
 	public double amount;
