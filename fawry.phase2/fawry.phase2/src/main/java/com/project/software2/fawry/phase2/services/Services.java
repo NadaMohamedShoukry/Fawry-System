@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 @Service
 public class Services implements ServiceFactory {
     
-	//@PostMapping(value="/payDonations/{amount}")
     @Override
     public double payForDonations(Donations d, double amount) {
     	 
@@ -21,7 +20,6 @@ public class Services implements ServiceFactory {
          return cost;
     }
     
-	//@PostMapping(value="/payInternet/{amount}")
     @Override
     public double payForInternet(InternetPayment i, double amount) {
         double cost = i.internetPay(amount);
@@ -31,7 +29,6 @@ public class Services implements ServiceFactory {
         return cost;
     }
     
-	//@PostMapping(value="/payLandline/{amount}")
     @Override
     public double payForLandline( Landline l, double amount) {
         double cost = l.payReceipt(amount);
@@ -41,7 +38,6 @@ public class Services implements ServiceFactory {
         return cost;
     }
     
-	//@PostMapping(value="/payMobile/{amount}")
     @Override
     public double payForMobile( MobileRecharge m,  double amount) {
         double cost = m.recharge(amount);

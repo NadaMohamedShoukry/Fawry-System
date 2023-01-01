@@ -12,10 +12,7 @@ public class Wallet implements Payment{
 	public double availMoney;
 	double amount;
 	String verfyNum;
-//	public Wallet(double availMoney, String verfyNum) {
-//		this.availMoney=availMoney;
-//		this.verfyNum=verfyNum;
-//	}
+
 	@PostMapping(value="/walletdetails")
 	public Wallet walletDetails(@RequestBody Wallet obj) {
 		//this.amount=obj.amount;
@@ -39,14 +36,7 @@ public class Wallet implements Payment{
     	 }
     		
      }
-     
-//     @Override
-//     public void collectPayDet()
-//     {
-//    	 System.out.println("Enter verfy message");
-// 		verfyNum=input.next();
-//     }
-//     
+        
 	 @GetMapping(value="/walletaccount/{amount}")
      public String account(@PathVariable("amount")double amount) {
     	 System.out.println(" Your Wallet Now " +  (availMoney-amount));

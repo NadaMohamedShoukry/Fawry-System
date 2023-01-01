@@ -19,7 +19,7 @@ public class Refund {
     public boolean RefundRequest(int ID) {
     	//Refund f = new Refund();
         //System.out.println("Enter ID of the service: ");
-        a.refundRequests.add(ID);
+       // a.refundRequests.add(ID);
         System.out.println("your refund request is sent to the admin.");
         if (a.status == true) {
             System.out.println("your refund request has been accepted.");

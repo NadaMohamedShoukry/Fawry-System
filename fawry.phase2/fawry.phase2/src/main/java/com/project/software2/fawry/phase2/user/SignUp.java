@@ -5,8 +5,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.project.software2.fawry.phase2.DB.UserDB;
-
 @RestController
 public class SignUp implements LogIn{
 	SignIn s = new SignIn();

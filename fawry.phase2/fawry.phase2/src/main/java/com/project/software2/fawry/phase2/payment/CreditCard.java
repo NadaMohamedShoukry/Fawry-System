@@ -15,16 +15,7 @@ public class CreditCard implements Payment{
 	public double  availMoney;
 	public double amount;
 	
-//	public  CreditCard(double aval) {
-//		this.availMoney=aval;
-//	}
-//	public CreditCard(String cardnumber,int Month,int Year,double availMoney,double amount) {
-//		this.cardnumber=cardnumber;
-//		this.Month=Month;
-//		this.Year=Year;
-//		this.availMoney=availMoney;
-//		this.amount=amount;
-//	}
+
 	@PostMapping(value="/creditdetails")
 	public CreditCard creditDetails(@RequestBody CreditCard obj) {
 		//this.amount=obj.amount;

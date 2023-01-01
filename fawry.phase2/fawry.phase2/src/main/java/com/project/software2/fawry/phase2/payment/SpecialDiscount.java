@@ -9,9 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class SpecialDiscount extends Discount{
 	double overAll;
 	//Services s;
-//    public SpecialDiscount(Payment obj) {
-// 	   super.obj=obj;
-//    }
+
     @PostMapping(value="/paymentwayspecial")
     public void paymentway(@RequestBody Payment obj ) {
     	super.obj=obj;

@@ -12,12 +12,6 @@ public class Discount implements Payment{
 		return amount;
 	}
 
-//	@Override
-//	public void collectPayDet() {
-//		// TODO Auto-generated method stub
-//		
-//	}
-
 	@Override
 	public boolean validatePay() {
 		// TODO Auto-generated method stub

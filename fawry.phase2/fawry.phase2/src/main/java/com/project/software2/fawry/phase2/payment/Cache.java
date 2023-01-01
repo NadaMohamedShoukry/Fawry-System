@@ -43,12 +43,6 @@ public class Cache implements Payment{
 		return number;
 	}
 	
-//	public Cache(double amount,String address,String number)
-//	{
-//		this.amount=amount;
-//		this.address=address;
-//		this.number=number;
-//	}
 	 @PostMapping(value="/cachepay/{amount}")
 	@Override
      public double pay(@PathVariable("amount")double amount) {
