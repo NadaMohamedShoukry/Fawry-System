@@ -22,8 +22,9 @@ public class Discount implements Payment{
 	}
 
 	@Override
-	public void account(double amount) {
+	public String account(double amount) {
 		// TODO Auto-generated method stub
+		return "";
 		
 	}
 

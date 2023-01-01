@@ -10,7 +10,7 @@ import com.project.software2.fawry.phase2.payment.*;
 public class Refund {
     double availMoney;
     String verifyNum;
-    Wallet w = new Wallet(availMoney,verifyNum);
+    Wallet w = new Wallet();
     ServiceFactory s;
     //boolean status;
     
